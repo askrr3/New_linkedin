@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160924213823) do
 
+  enable_extension "plpgsql"
+
+
   create_table "networkings", force: true do |t|
     t.integer  "user_id"
     t.integer  "network_connection_id"
