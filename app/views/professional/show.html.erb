@@ -1,0 +1,13 @@
+<h1>All Users</h1> <h1> <a href="/professional/index">Home</a> </h1>
+
+<!-- <p><%=@current%></p>
+<p><%=@networks%></p> -->
+
+  <% for curr in @current %>
+  <!-- <%= curr.id %> -->
+      <% if @networks.include?(curr.id) == false %>
+
+        <p><a href="/professional/<%=curr.id%>"><%= curr.name%></a> <a href="/connecting/<%=curr.id%>">Connect</a> </p>
+
+    <% end %>
+  <% end %>

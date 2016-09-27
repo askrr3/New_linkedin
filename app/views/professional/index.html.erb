@@ -1,0 +1,55 @@
+<h3> <a href="/professional/show">All Users</a> </h3><a href="/logout">Logout</a> </h3>
+
+<h1>Hello <%= @user.name %></h1>
+
+<p>
+  Here is your description:
+</p>
+  <div >
+    "<%= @user.Description %>"
+  </div>
+  <p>==================</p>
+<p>
+  Your professional Network:
+</p>
+  <div border>
+    <table>
+      <tr>
+        <th>name</th>
+        <th>action</th>
+      </tr>
+      <% for all in @alluser %>
+        <% for accept in @accepted %>
+          <% if all.id == accept.user_id %>
+            <tr>
+              <td> <%= all.name %> </td>
+              <td>  <a href="/remove/<%= accept.user_id %>">Remove </a></td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    </table>
+
+  </div>
+  <p>==================</p>
+<p>
+  Invitations:<br>
+    The following people asked you to be in their network
+</p>
+
+  <table>
+    <tr>
+      <th>name</th>
+      <th>action</th>
+    </tr>
+    <% for all in @alluser %>
+      <% for invite in @invites %>
+        <% if all.id == invite.user_id %>
+          <tr>
+            <td> <%= all.name %> </td>
+            <td>  <a href="/accept/<%= invite.id %>">Accept Invite</a> | <a href="/ignore/<%= invite.user_id %>">Ignore</a></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </table>

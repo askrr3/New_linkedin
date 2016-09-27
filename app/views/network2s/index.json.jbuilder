@@ -1,0 +1,1 @@
+json.array! @network2s, partial: 'network2s/network2', as: :network2

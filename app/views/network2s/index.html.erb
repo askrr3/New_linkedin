@@ -1,0 +1,27 @@
+<h1>Listing network2s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Networkee</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network2s.each do |network2| %>
+      <tr>
+        <td><%= network2.user_id %></td>
+        <td><%= network2.networkee_id %></td>
+        <td><%= link_to 'Show', network2 %></td>
+        <td><%= link_to 'Edit', edit_network2_path(network2) %></td>
+        <td><%= link_to 'Destroy', network2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network2', new_network2_path %>
