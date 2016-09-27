@@ -13,7 +13,7 @@ default: &default
 development:
   <<: *default
   database: seeks_development
-    username: smkrr3
+    # username: smkrr3
 
 
 # Warning: The database defined as "test" will be erased and
@@ -22,14 +22,14 @@ development:
 test:
   <<: *default
   database: seeks_test
-    username: smkrr3
+    # username: smkrr3
 
 
 production:
   <<: *default
   database: seeks_production
   password: <%= ENV['SEEKS_DATABASE_PASSWORD']%>
-  username: smkrr3
+  # username: smkrr3
 
 
 
